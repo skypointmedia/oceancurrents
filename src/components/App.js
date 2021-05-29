@@ -2,7 +2,7 @@
 function App() {
   return (
     <>
-    Shitty old man
+    This is the map
     </>
   );
 }

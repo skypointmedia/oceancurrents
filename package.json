@@ -1,0 +1,22 @@
+{
+  "name": "oceancurrents",
+  "version": "1.0.0",
+  "description": "Location based weather updates for marine use",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skypointmedia/oceancurrents.git"
+  },
+  "author": "Matt Santucci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skypointmedia/oceancurrents/issues"
+  },
+  "homepage": "https://github.com/skypointmedia/oceancurrents#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

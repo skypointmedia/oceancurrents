@@ -8,7 +8,6 @@ import Login from './Login'
 import ForgotPassword from './ForgotPassword'
 import UpdateProfile from './UpdateProfile'
 import PrivateRoute from './PrivateRoute'
-import Weather from './Weather'
 
 const App = () => {
     
@@ -20,8 +19,7 @@ const App = () => {
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} /> 
-              <PrivateRoute path="/weather" component={Weather} />                             
+              <PrivateRoute path="/update-profile" component={UpdateProfile} />                           
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />                           

@@ -1,29 +1,32 @@
 import React from 'react'
-import { GoogleMap, 
-    useLoadScript, 
-    Marker, 
-    InfoWindow } from '@react-google-maps/api'
-
-import {formatRelative} from 'date-fns'
+import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api'
+import { formatRelative } from 'date-fns'
+import {usePosition} from './UsePosition';
 import mapStyles from './mapStyles'
-
 const libraries = ["places"]
 
-
 function Map() {
-    const {isLoaded, loadError} = useLoadScript({
+      
+      //Load initial map
+      const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-        libraries,
+        libraries
       })
 
+      //Get Lat/Lon
+      const {latitude, longitude, error} = usePosition();
+
+      //fresh duds
       const mapContainerStyle ={
         width:'100vw',
         height:'100vh'
       }
+      //Center the map
       const center ={
-        lat: 28.185654,
-        lng: -82.680748
+        lat: latitude,
+        lng: longitude,
       }
+      //Map options
       const options = {
         styles: mapStyles,
         disableDefaultUI: true,
@@ -35,7 +38,11 @@ function Map() {
 
     return (
         <>
-        <GoogleMap mapContainerStyle={mapContainerStyle} zoom={12} center={center} options={options} />
+        <GoogleMap 
+        mapContainerStyle={mapContainerStyle} 
+        zoom={17} 
+        center={center} 
+        options={options} />
         </>
     )
 }

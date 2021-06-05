@@ -21,7 +21,7 @@ export default function Dashboard() {
             setError('Failed to logout')
         }
     }
-
+    
     return (
         <>
             {/* <Card>  
@@ -36,7 +36,6 @@ export default function Dashboard() {
             <div className="w-100 text-center mt-2">
             <Button varient="link" onClick={handleLogOut}>Log out</Button>
             </div> */}
-            
             <Map/>
         </>
     ) 
